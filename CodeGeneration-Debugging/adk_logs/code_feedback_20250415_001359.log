@@ -1,0 +1,293 @@
+2025-04-15 00:14:00,020 - google.adk.models.google_llm - INFO - Sending out request, model: gemini-1.5-flash, backend: ml_dev, stream: False
+2025-04-15 00:14:00,021 - google.adk.models.google_llm - INFO - 
+LLM Request:
+-----------------------------------------------------------
+System Instruction:
+
+You are a Planner AI. Given a user query, break the problem into a sequence of subtasks.
+Respond in bullet points, one for each step.
+
+
+You are an agent. Your internal name is "Planner".
+-----------------------------------------------------------
+Contents:
+{"parts":[{"text":"Write a function to scrape titles from a Wikipedia page and save them to a CSV."}],"role":"user"}
+-----------------------------------------------------------
+Functions:
+
+-----------------------------------------------------------
+
+2025-04-15 00:14:00,021 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-04-15 00:14:04,217 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-04-15 00:14:04,219 - google.adk.models.google_llm - INFO - 
+LLM Response:
+-----------------------------------------------------------
+Text:
+*   **Identify target Wikipedia page:** Determine the specific Wikipedia URL the user wants to scrape.  This might require clarification from the user if they haven't specified it.
+
+*   **Choose a web scraping library:** Select an appropriate Python library like `BeautifulSoup` or `Scrapy` for parsing the HTML of the Wikipedia page.
+
+*   **Develop the scraping function:** Write a Python function that:
+    *   Fetches the HTML content of the specified Wikipedia page using `requests` or a similar library.
+    *   Parses the HTML using the chosen library to locate and extract the titles (likely within `<title>` tags or specific header tags like `<h1>`, `<h2>`, etc.).  This might involve identifying common patterns in the page's structure.
+    *   Handles potential errors such as network issues or unexpected page structure gracefully.
+
+*   **Define CSV output format:** Decide the structure of the CSV file.  This will likely involve a single column for titles.
+
+*   **Write the CSV output function:** Write a Python function that:
+    *   Takes the list of extracted titles as input.
+    *   Creates a CSV file using the `csv` module.
+    *   Writes the titles into the CSV file, one title per row.
+    *   Handles potential errors during file writing.
+
+*   **Integrate functions and handle user input:** Combine the scraping and CSV writing functions into a single program.  This should include a mechanism for the user to either provide the Wikipedia URL directly, or select from a predefined list (if applicable).
+
+*   **Test the program:** Thoroughly test the program with various Wikipedia pages to ensure it extracts titles correctly and handles different page structures effectively.  Pay attention to edge cases and error handling.
+
+*   **Document the code:** Add comments explaining the functionality of each part of the code.  Include instructions for how to run the script and what input it expects.
+
+-----------------------------------------------------------
+Function calls:
+
+-----------------------------------------------------------
+Raw response:
+{"candidates":[{"content":{"parts":[{"text":"*   **Identify target Wikipedia page:** Determine the specific Wikipedia URL the user wants to scrape.  This might require clarification from the user if they haven't specified it.\n\n*   **Choose a web scraping library:** Select an appropriate Python library like `BeautifulSoup` or `Scrapy` for parsing the HTML of the Wikipedia page.\n\n*   **Develop the scraping function:** Write a Python function that:\n    *   Fetches the HTML content of the specified Wikipedia page using `requests` or a similar library.\n    *   Parses the HTML using the chosen library to locate and extract the titles (likely within `<title>` tags or specific header tags like `<h1>`, `<h2>`, etc.).  This might involve identifying common patterns in the page's structure.\n    *   Handles potential errors such as network issues or unexpected page structure gracefully.\n\n*   **Define CSV output format:** Decide the structure of the CSV file.  This will likely involve a single column for titles.\n\n*   **Write the CSV output function:** Write a Python function that:\n    *   Takes the list of extracted titles as input.\n    *   Creates a CSV file using the `csv` module.\n    *   Writes the titles into the CSV file, one title per row.\n    *   Handles potential errors during file writing.\n\n*   **Integrate functions and handle user input:** Combine the scraping and CSV writing functions into a single program.  This should include a mechanism for the user to either provide the Wikipedia URL directly, or select from a predefined list (if applicable).\n\n*   **Test the program:** Thoroughly test the program with various Wikipedia pages to ensure it extracts titles correctly and handles different page structures effectively.  Pay attention to edge cases and error handling.\n\n*   **Document the code:** Add comments explaining the functionality of each part of the code.  Include instructions for how to run the script and what input it expects.\n"}],"role":"model"},"finish_reason":"STOP","avg_logprobs":-0.3699240483362089}],"model_version":"gemini-1.5-flash","usage_metadata":{"candidates_token_count":403,"candidates_tokens_details":[{"modality":"TEXT","token_count":403}],"prompt_token_count":63,"prompt_tokens_details":[{"modality":"TEXT","token_count":63}],"total_token_count":466},"automatic_function_calling_history":[]}
+-----------------------------------------------------------
+
+2025-04-15 00:14:04,255 - google.adk.models.google_llm - INFO - Sending out request, model: gemini-1.5-flash, backend: ml_dev, stream: False
+2025-04-15 00:14:04,256 - google.adk.models.google_llm - INFO - 
+LLM Request:
+-----------------------------------------------------------
+System Instruction:
+
+You are a Python programmer. Take the list of subtasks and write clean Python code to accomplish all of them.
+Wrap your code in a Python code block.
+
+
+You are an agent. Your internal name is "Coder".
+-----------------------------------------------------------
+Contents:
+{"parts":[{"text":"Write a function to scrape titles from a Wikipedia page and save them to a CSV."}],"role":"user"}
+{"parts":[{"text":"For context:"},{"text":"[Planner] said: *   **Identify target Wikipedia page:** Determine the specific Wikipedia URL the user wants to scrape.  This might require clarification from the user if they haven't specified it.\n\n*   **Choose a web scraping library:** Select an appropriate Python library like `BeautifulSoup` or `Scrapy` for parsing the HTML of the Wikipedia page.\n\n*   **Develop the scraping function:** Write a Python function that:\n    *   Fetches the HTML content of the specified Wikipedia page using `requests` or a similar library.\n    *   Parses the HTML using the chosen library to locate and extract the titles (likely within `<title>` tags or specific header tags like `<h1>`, `<h2>`, etc.).  This might involve identifying common patterns in the page's structure.\n    *   Handles potential errors such as network issues or unexpected page structure gracefully.\n\n*   **Define CSV output format:** Decide the structure of the CSV file.  This will likely involve a single column for titles.\n\n*   **Write the CSV output function:** Write a Python function that:\n    *   Takes the list of extracted titles as input.\n    *   Creates a CSV file using the `csv` module.\n    *   Writes the titles into the CSV file, one title per row.\n    *   Handles potential errors during file writing.\n\n*   **Integrate functions and handle user input:** Combine the scraping and CSV writing functions into a single program.  This should include a mechanism for the user to either provide the Wikipedia URL directly, or select from a predefined list (if applicable).\n\n*   **Test the program:** Thoroughly test the program with various Wikipedia pages to ensure it extracts titles correctly and handles different page structures effectively.  Pay attention to edge cases and error handling.\n\n*   **Document the code:** Add comments explaining the functionality of each part of the code.  Include instructions for how to run the script and what input it expects.\n"}],"role":"user"}
+-----------------------------------------------------------
+Functions:
+
+-----------------------------------------------------------
+
+2025-04-15 00:14:04,257 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-04-15 00:14:08,400 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-04-15 00:14:08,403 - google.adk.models.google_llm - INFO - 
+LLM Response:
+-----------------------------------------------------------
+Text:
+```python
+import requests
+from bs4 import BeautifulSoup
+import csv
+import sys
+
+def scrape_wikipedia_titles(url):
+    """
+    Scrapes titles from a Wikipedia page and returns them as a list.
+
+    Args:
+        url: The URL of the Wikipedia page to scrape.
+
+    Returns:
+        A list of strings, where each string is a title found on the page.
+        Returns None if there is an error.
+    """
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise an exception for bad status codes
+
+        soup = BeautifulSoup(response.content, "html.parser")
+        titles = []
+
+        # Extract titles from h1, h2, h3 tags.  Adjust as needed for different wiki pages.
+        for tag in soup.find_all(["h1", "h2", "h3"]):
+            title = tag.get_text().strip()
+            if title:  #Avoid empty titles
+                titles.append(title)
+        
+        return titles
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching URL: {e}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return None
+
+
+def write_titles_to_csv(titles, filename="wikipedia_titles.csv"):
+    """
+    Writes a list of titles to a CSV file.
+
+    Args:
+        titles: A list of strings, where each string is a title.
+        filename: The name of the CSV file to create (default: "wikipedia_titles.csv").
+    """
+    try:
+        with open(filename, "w", newline="", encoding="utf-8") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(["Title"])  # Write header
+            for title in titles:
+                writer.writerow([title])
+        print(f"Titles saved to {filename}")
+    except Exception as e:
+        print(f"Error writing to CSV file: {e}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python wikipedia_scraper.py <wikipedia_url>")
+        sys.exit(1)
+
+    wikipedia_url = sys.argv[1]
+    scraped_titles = scrape_wikipedia_titles(wikipedia_url)
+
+    if scraped_titles:
+        write_titles_to_csv(scraped_titles)
+
+```
+
+-----------------------------------------------------------
+Function calls:
+
+-----------------------------------------------------------
+Raw response:
+{"candidates":[{"content":{"parts":[{"text":"```python\nimport requests\nfrom bs4 import BeautifulSoup\nimport csv\nimport sys\n\ndef scrape_wikipedia_titles(url):\n    \"\"\"\n    Scrapes titles from a Wikipedia page and returns them as a list.\n\n    Args:\n        url: The URL of the Wikipedia page to scrape.\n\n    Returns:\n        A list of strings, where each string is a title found on the page.\n        Returns None if there is an error.\n    \"\"\"\n    try:\n        response = requests.get(url)\n        response.raise_for_status()  # Raise an exception for bad status codes\n\n        soup = BeautifulSoup(response.content, \"html.parser\")\n        titles = []\n\n        # Extract titles from h1, h2, h3 tags.  Adjust as needed for different wiki pages.\n        for tag in soup.find_all([\"h1\", \"h2\", \"h3\"]):\n            title = tag.get_text().strip()\n            if title:  #Avoid empty titles\n                titles.append(title)\n        \n        return titles\n\n    except requests.exceptions.RequestException as e:\n        print(f\"Error fetching URL: {e}\")\n        return None\n    except Exception as e:\n        print(f\"An unexpected error occurred: {e}\")\n        return None\n\n\ndef write_titles_to_csv(titles, filename=\"wikipedia_titles.csv\"):\n    \"\"\"\n    Writes a list of titles to a CSV file.\n\n    Args:\n        titles: A list of strings, where each string is a title.\n        filename: The name of the CSV file to create (default: \"wikipedia_titles.csv\").\n    \"\"\"\n    try:\n        with open(filename, \"w\", newline=\"\", encoding=\"utf-8\") as csvfile:\n            writer = csv.writer(csvfile)\n            writer.writerow([\"Title\"])  # Write header\n            for title in titles:\n                writer.writerow([title])\n        print(f\"Titles saved to {filename}\")\n    except Exception as e:\n        print(f\"Error writing to CSV file: {e}\")\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(\"Usage: python wikipedia_scraper.py <wikipedia_url>\")\n        sys.exit(1)\n\n    wikipedia_url = sys.argv[1]\n    scraped_titles = scrape_wikipedia_titles(wikipedia_url)\n\n    if scraped_titles:\n        write_titles_to_csv(scraped_titles)\n\n```\n"}],"role":"model"},"citation_metadata":{"citations":[{"end_index":579,"start_index":399},{"end_index":1125,"start_index":952,"uri":"https://github.com/netdevmike/basic-web-scrapper"}]},"finish_reason":"STOP","avg_logprobs":-0.06705339189986108}],"model_version":"gemini-1.5-flash","usage_metadata":{"candidates_token_count":568,"candidates_tokens_details":[{"modality":"TEXT","token_count":568}],"prompt_token_count":475,"prompt_tokens_details":[{"modality":"TEXT","token_count":475}],"total_token_count":1043},"automatic_function_calling_history":[]}
+-----------------------------------------------------------
+
+2025-04-15 00:14:08,443 - google.adk.models.google_llm - INFO - Sending out request, model: gemini-1.5-flash, backend: ml_dev, stream: False
+2025-04-15 00:14:08,443 - google.adk.models.google_llm - INFO - 
+LLM Request:
+-----------------------------------------------------------
+System Instruction:
+
+You are a code reviewer. Review the Python code provided and provide suggestions for improvement.
+Focus on correctness, efficiency, and clarity.
+
+
+You are an agent. Your internal name is "Critic".
+-----------------------------------------------------------
+Contents:
+{"parts":[{"text":"Write a function to scrape titles from a Wikipedia page and save them to a CSV."}],"role":"user"}
+{"parts":[{"text":"For context:"},{"text":"[Planner] said: *   **Identify target Wikipedia page:** Determine the specific Wikipedia URL the user wants to scrape.  This might require clarification from the user if they haven't specified it.\n\n*   **Choose a web scraping library:** Select an appropriate Python library like `BeautifulSoup` or `Scrapy` for parsing the HTML of the Wikipedia page.\n\n*   **Develop the scraping function:** Write a Python function that:\n    *   Fetches the HTML content of the specified Wikipedia page using `requests` or a similar library.\n    *   Parses the HTML using the chosen library to locate and extract the titles (likely within `<title>` tags or specific header tags like `<h1>`, `<h2>`, etc.).  This might involve identifying common patterns in the page's structure.\n    *   Handles potential errors such as network issues or unexpected page structure gracefully.\n\n*   **Define CSV output format:** Decide the structure of the CSV file.  This will likely involve a single column for titles.\n\n*   **Write the CSV output function:** Write a Python function that:\n    *   Takes the list of extracted titles as input.\n    *   Creates a CSV file using the `csv` module.\n    *   Writes the titles into the CSV file, one title per row.\n    *   Handles potential errors during file writing.\n\n*   **Integrate functions and handle user input:** Combine the scraping and CSV writing functions into a single program.  This should include a mechanism for the user to either provide the Wikipedia URL directly, or select from a predefined list (if applicable).\n\n*   **Test the program:** Thoroughly test the program with various Wikipedia pages to ensure it extracts titles correctly and handles different page structures effectively.  Pay attention to edge cases and error handling.\n\n*   **Document the code:** Add comments explaining the functionality of each part of the code.  Include instructions for how to run the script and what input it expects.\n"}],"role":"user"}
+{"parts":[{"text":"For context:"},{"text":"[Coder] said: ```python\nimport requests\nfrom bs4 import BeautifulSoup\nimport csv\nimport sys\n\ndef scrape_wikipedia_titles(url):\n    \"\"\"\n    Scrapes titles from a Wikipedia page and returns them as a list.\n\n    Args:\n        url: The URL of the Wikipedia page to scrape.\n\n    Returns:\n        A list of strings, where each string is a title found on the page.\n        Returns None if there is an error.\n    \"\"\"\n    try:\n        response = requests.get(url)\n        response.raise_for_status()  # Raise an exception for bad status codes\n\n        soup = BeautifulSoup(response.content, \"html.parser\")\n        titles = []\n\n        # Extract titles from h1, h2, h3 tags.  Adjust as needed for different wiki pages.\n        for tag in soup.find_all([\"h1\", \"h2\", \"h3\"]):\n            title = tag.get_text().strip()\n            if title:  #Avoid empty titles\n                titles.append(title)\n        \n        return titles\n\n    except requests.exceptions.RequestException as e:\n        print(f\"Error fetching URL: {e}\")\n        return None\n    except Exception as e:\n        print(f\"An unexpected error occurred: {e}\")\n        return None\n\n\ndef write_titles_to_csv(titles, filename=\"wikipedia_titles.csv\"):\n    \"\"\"\n    Writes a list of titles to a CSV file.\n\n    Args:\n        titles: A list of strings, where each string is a title.\n        filename: The name of the CSV file to create (default: \"wikipedia_titles.csv\").\n    \"\"\"\n    try:\n        with open(filename, \"w\", newline=\"\", encoding=\"utf-8\") as csvfile:\n            writer = csv.writer(csvfile)\n            writer.writerow([\"Title\"])  # Write header\n            for title in titles:\n                writer.writerow([title])\n        print(f\"Titles saved to {filename}\")\n    except Exception as e:\n        print(f\"Error writing to CSV file: {e}\")\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(\"Usage: python wikipedia_scraper.py <wikipedia_url>\")\n        sys.exit(1)\n\n    wikipedia_url = sys.argv[1]\n    scraped_titles = scrape_wikipedia_titles(wikipedia_url)\n\n    if scraped_titles:\n        write_titles_to_csv(scraped_titles)\n\n```\n"}],"role":"user"}
+-----------------------------------------------------------
+Functions:
+
+-----------------------------------------------------------
+
+2025-04-15 00:14:08,444 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-04-15 00:14:16,338 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-04-15 00:14:16,340 - google.adk.models.google_llm - INFO - 
+LLM Response:
+-----------------------------------------------------------
+Text:
+Critic's Review of Wikipedia Scraper
+
+The code is functional and well-structured, demonstrating good understanding of web scraping and CSV handling in Python.  However, several improvements can enhance its robustness, efficiency, and readability.
+
+**Strengths:**
+
+*   **Clear Function Separation:** The code is logically divided into functions for scraping and CSV writing, promoting modularity and reusability.
+*   **Error Handling:**  `try-except` blocks effectively catch potential `requests` and file I/O exceptions, preventing crashes.  Specific exception types are caught, which is good practice.
+*   **UTF-8 Encoding:**  The CSV writing function uses UTF-8 encoding, ensuring proper handling of international characters.
+*   **Command-line Argument Handling:** Uses `sys.argv` for convenient command-line execution.
+*   **Docstrings:** Functions have docstrings explaining their purpose, arguments, and return values.
+
+
+**Areas for Improvement:**
+
+1.  **Robustness and Flexibility:**
+
+    *   **More sophisticated title extraction:** Relying solely on `<h1>`, `<h2>`, and `<h3>` tags is brittle. Wikipedia's structure can vary. Consider more robust techniques.  For example, look for specific CSS classes or other structural indicators that consistently mark titles, or use more advanced techniques from BeautifulSoup (like finding all elements with specific attributes).
+    *   **Handle different Wikipedia languages:** The code implicitly assumes English Wikipedia.  Add support for other languages (perhaps through user input or URL detection).  This might involve adjustments to how titles are identified.
+    *   **Rate Limiting:**  Add delays between requests using `time.sleep()` to avoid overloading the Wikipedia servers.  This is crucial for ethical and responsible scraping.
+
+2.  **Efficiency:**
+
+    *   **Optimized BeautifulSoup search:** Instead of iterating through all `h1`, `h2`, and `h3` tags, consider using more targeted CSS selectors (e.g., `soup.select('h1.firstHeading')` if a specific class is consistently used for main titles) or XPath expressions for more efficient searching.
+
+3.  **Readability and Style:**
+
+    *   **More descriptive variable names:**  `tag` could be `heading_tag`.
+    *   **Improve error messages:** Error messages could provide more context (e.g., the URL that failed, the specific line of code that raised the error).
+    *   **Remove Redundant Check:** The `if title:` check within the loop is redundant; `get_text()` already returns an empty string if there's no text.
+
+
+4. **Testing:**
+
+   *   Add unit tests using a framework like `unittest` or `pytest` to ensure that the functions work correctly under different conditions (valid URLs, invalid URLs, empty pages, pages with unexpected structure, etc.)
+
+
+**Revised Code (incorporating some suggestions):**
+
+```python
+import requests
+from bs4 import BeautifulSoup
+import csv
+import sys
+import time
+
+def scrape_wikipedia_titles(url):
+    """Scrapes titles from a Wikipedia page."""
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)
+        time.sleep(2) #add delay to avoid overloading the Wikipedia server
+
+        soup = BeautifulSoup(response.content, "html.parser")
+        #More robust title selection.  Adapt selector as needed for different wiki pages.
+        titles = [tag.get_text().strip() for tag in soup.select('.mw-page-title')] 
+        if not titles: #handle case where no titles are found with this selector.
+            titles = [tag.get_text().strip() for tag in soup.find_all(["h1", "h2", "h3"])] #fallback to original method
+
+        return titles
+
+    except requests.exceptions.RequestException as e:
+        print(f"Error fetching URL {url}: {e}")
+        return None
+    except Exception as e:
+        print(f"An unexpected error occurred while processing {url}: {e}")  # More context in the error message
+        return None
+
+
+def write_titles_to_csv(titles, filename="wikipedia_titles.csv"):
+    """Writes titles to a CSV file."""
+    try:
+        with open(filename, "w", newline="", encoding="utf-8") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(["Title"])
+            writer.writerows([[title] for title in titles]) #More efficient writing
+        print(f"Titles saved to {filename}")
+    except Exception as e:
+        print(f"Error writing to CSV file: {e}")
+
+
+if __name__ == "__main__":
+    if len(sys.argv) != 2:
+        print("Usage: python wikipedia_scraper.py <wikipedia_url>")
+        sys.exit(1)
+
+    wikipedia_url = sys.argv[1]
+    scraped_titles = scrape_wikipedia_titles(wikipedia_url)
+
+    if scraped_titles:
+        write_titles_to_csv(scraped_titles)
+```
+
+This revised code addresses several of the points mentioned above, but further improvements might be needed depending on the specifics of the Wikipedia pages to be scraped.  Remember to always respect the `robots.txt` of the website you are scraping.
+
+-----------------------------------------------------------
+Function calls:
+
+-----------------------------------------------------------
+Raw response:
+{"candidates":[{"content":{"parts":[{"text":"Critic's Review of Wikipedia Scraper\n\nThe code is functional and well-structured, demonstrating good understanding of web scraping and CSV handling in Python.  However, several improvements can enhance its robustness, efficiency, and readability.\n\n**Strengths:**\n\n*   **Clear Function Separation:** The code is logically divided into functions for scraping and CSV writing, promoting modularity and reusability.\n*   **Error Handling:**  `try-except` blocks effectively catch potential `requests` and file I/O exceptions, preventing crashes.  Specific exception types are caught, which is good practice.\n*   **UTF-8 Encoding:**  The CSV writing function uses UTF-8 encoding, ensuring proper handling of international characters.\n*   **Command-line Argument Handling:** Uses `sys.argv` for convenient command-line execution.\n*   **Docstrings:** Functions have docstrings explaining their purpose, arguments, and return values.\n\n\n**Areas for Improvement:**\n\n1.  **Robustness and Flexibility:**\n\n    *   **More sophisticated title extraction:** Relying solely on `<h1>`, `<h2>`, and `<h3>` tags is brittle. Wikipedia's structure can vary. Consider more robust techniques.  For example, look for specific CSS classes or other structural indicators that consistently mark titles, or use more advanced techniques from BeautifulSoup (like finding all elements with specific attributes).\n    *   **Handle different Wikipedia languages:** The code implicitly assumes English Wikipedia.  Add support for other languages (perhaps through user input or URL detection).  This might involve adjustments to how titles are identified.\n    *   **Rate Limiting:**  Add delays between requests using `time.sleep()` to avoid overloading the Wikipedia servers.  This is crucial for ethical and responsible scraping.\n\n2.  **Efficiency:**\n\n    *   **Optimized BeautifulSoup search:** Instead of iterating through all `h1`, `h2`, and `h3` tags, consider using more targeted CSS selectors (e.g., `soup.select('h1.firstHeading')` if a specific class is consistently used for main titles) or XPath expressions for more efficient searching.\n\n3.  **Readability and Style:**\n\n    *   **More descriptive variable names:**  `tag` could be `heading_tag`.\n    *   **Improve error messages:** Error messages could provide more context (e.g., the URL that failed, the specific line of code that raised the error).\n    *   **Remove Redundant Check:** The `if title:` check within the loop is redundant; `get_text()` already returns an empty string if there's no text.\n\n\n4. **Testing:**\n\n   *   Add unit tests using a framework like `unittest` or `pytest` to ensure that the functions work correctly under different conditions (valid URLs, invalid URLs, empty pages, pages with unexpected structure, etc.)\n\n\n**Revised Code (incorporating some suggestions):**\n\n```python\nimport requests\nfrom bs4 import BeautifulSoup\nimport csv\nimport sys\nimport time\n\ndef scrape_wikipedia_titles(url):\n    \"\"\"Scrapes titles from a Wikipedia page.\"\"\"\n    try:\n        response = requests.get(url)\n        response.raise_for_status()  # Raise HTTPError for bad responses (4xx or 5xx)\n        time.sleep(2) #add delay to avoid overloading the Wikipedia server\n\n        soup = BeautifulSoup(response.content, \"html.parser\")\n        #More robust title selection.  Adapt selector as needed for different wiki pages.\n        titles = [tag.get_text().strip() for tag in soup.select('.mw-page-title')] \n        if not titles: #handle case where no titles are found with this selector.\n            titles = [tag.get_text().strip() for tag in soup.find_all([\"h1\", \"h2\", \"h3\"])] #fallback to original method\n\n        return titles\n\n    except requests.exceptions.RequestException as e:\n        print(f\"Error fetching URL {url}: {e}\")\n        return None\n    except Exception as e:\n        print(f\"An unexpected error occurred while processing {url}: {e}\")  # More context in the error message\n        return None\n\n\ndef write_titles_to_csv(titles, filename=\"wikipedia_titles.csv\"):\n    \"\"\"Writes titles to a CSV file.\"\"\"\n    try:\n        with open(filename, \"w\", newline=\"\", encoding=\"utf-8\") as csvfile:\n            writer = csv.writer(csvfile)\n            writer.writerow([\"Title\"])\n            writer.writerows([[title] for title in titles]) #More efficient writing\n        print(f\"Titles saved to {filename}\")\n    except Exception as e:\n        print(f\"Error writing to CSV file: {e}\")\n\n\nif __name__ == \"__main__\":\n    if len(sys.argv) != 2:\n        print(\"Usage: python wikipedia_scraper.py <wikipedia_url>\")\n        sys.exit(1)\n\n    wikipedia_url = sys.argv[1]\n    scraped_titles = scrape_wikipedia_titles(wikipedia_url)\n\n    if scraped_titles:\n        write_titles_to_csv(scraped_titles)\n```\n\nThis revised code addresses several of the points mentioned above, but further improvements might be needed depending on the specifics of the Wikipedia pages to be scraped.  Remember to always respect the `robots.txt` of the website you are scraping.\n"}],"role":"model"},"finish_reason":"STOP","avg_logprobs":-0.26992779577563625}],"model_version":"gemini-1.5-flash","usage_metadata":{"candidates_token_count":1169,"candidates_tokens_details":[{"modality":"TEXT","token_count":1169}],"prompt_token_count":1045,"prompt_tokens_details":[{"modality":"TEXT","token_count":1045}],"total_token_count":2214},"automatic_function_calling_history":[]}
+-----------------------------------------------------------
+
+2025-04-15 00:14:16,344 - __main__ - INFO - Log output saved to: adk_logs/code_feedback_20250415_001359.log
