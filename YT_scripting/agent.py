@@ -17,7 +17,7 @@
 from google.adk.agents import LlmAgent
 from google.adk.tools import google_search
 
-from util import load_instruction_from_file
+from .util import load_instruction_from_file
 
 # --- Sub Agent 1: Scriptwriter ---
 scriptwriter_agent = LlmAgent(
