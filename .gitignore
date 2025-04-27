@@ -1,3 +1,12 @@
 .env
 __pycache__/
 *.pyc
+CodeGeneration-Debugging/evalset117ab6.evalset.json
+StoryGenerator_ParallelAgent/adk_logs/story_20250426_112440.log
+YouTube_shorts_scriptwriter/__init__.py
+YouTube_shorts_scriptwriter/agent.py
+YouTube_shorts_scriptwriter/loop_agent.py
+YouTube_shorts_scriptwriter/scriptwriter.txt
+YouTube_shorts_scriptwriter/shorts_agent.txt
+YouTube_shorts_scriptwriter/test_agent.py
+YouTube_shorts_scriptwriter/visualizer.txt
