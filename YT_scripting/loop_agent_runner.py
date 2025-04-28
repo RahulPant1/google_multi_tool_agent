@@ -16,7 +16,7 @@
 
 from google.adk.agents import LlmAgent, LoopAgent
 from google.adk.tools import google_search
-from util import load_instruction_from_file
+from .util import load_instruction_from_file
 
 # --- Sub Agent 1: Scriptwriter ---
 scriptwriter_agent = LlmAgent(
@@ -65,7 +65,6 @@ root_agent = youtube_shorts_agent
 from google.genai import types
 from google.adk.sessions import InMemorySessionService
 from google.adk.runners import Runner
-from util import load_instruction_from_file
 
 # Load .env
 # Replace the API_KEY in .env file.
